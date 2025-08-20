@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
 
   /* Class Variables */
   homeText: string = 'Hello Home';
+  whatsAppMessage: string = 'Olá! Vim através do site e gostaria de mais informações!';
+  whatsAppPhone: string = '5511950900055';
+  whatsAppLink!: string;
 
   constructor(
     public router: Router,
@@ -30,6 +33,7 @@ export class HomeComponent implements OnInit {
   /* Fires when everything is loaded and ready */
   ngOnInit() {
     console.log("this.homeText", this.homeText);
+    this.whatsAppLink = `https://api.whatsapp.com/send?phone=${this.whatsAppPhone}&text=${encodeURIComponent(this.whatsAppMessage)}`;
   }
 
 }
